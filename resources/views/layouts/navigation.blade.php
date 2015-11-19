@@ -42,100 +42,189 @@
                     <div class="input-group custom-search-form">
                         <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
                     </div>
                     <!-- /input-group -->
                 </li>
-                <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <li {{ (Request::is('/') ? 'class="active"' : '') }}>
+                    <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-users fa-fw"></i> Members<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li>
-                            <a href="flot.html">Flot Charts</a>
+                        <li {{ (Request::is('*addmember') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('addmember') }}">Add Member</a>
                         </li>
-                        <li>
-                            <a href="morris.html">Morris.js Charts</a>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Search Member</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Export Members</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Generate Email Lists</a>
                         </li>
                     </ul>
-                    <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                </li>
-                <li>
-                    <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-calendar fa-fw"></i> Fixtures/Events<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li>
-                            <a href="panels-wells.html">Panels and Wells</a>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">View Calendar</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">View List</a>
                         </li>
                         <li>
-                            <a href="buttons.html">Buttons</a>
-                        </li>
-                        <li>
-                            <a href="notifications.html">Notifications</a>
-                        </li>
-                        <li>
-                            <a href="typography.html">Typography</a>
-                        </li>
-                        <li>
-                            <a href="icons.html"> Icons</a>
-                        </li>
-                        <li>
-                            <a href="grid.html">Grid</a>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="#">Second Level Item</a>
-                        </li>
-                        <li>
-                            <a href="#">Second Level Item</a>
-                        </li>
-                        <li>
-                            <a href="#">Third Level <span class="fa arrow"></span></a>
+                            <a href="#">Fixtures <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Third Level Item</a>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Add Fixture</a>
                                 </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Search Fixtures</a>
                                 </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Export Fixtures</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-third-level -->
+                        </li>
+                        <li>
+                            <a href="#">Viewing Parties <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Add Viewing Party</a>
+                                </li>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Add Viewing Party Location</a>
+                                </li>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Search Viewing Party</a>
+                                </li>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Export Viewing Parties</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                    <!-- /.nav-second-level -->
                 </li>
-                <li class="active">
-                    <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                <li>
+                    <a href="#"><i class="fa fa-tag fa-fw"></i> Merchandise<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a class="active" href="blank.html">Blank Page</a>
+                            <a href="#">Inventory <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Add Inventory</a>
+                                </li>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Search Inventory</a>
+                                </li>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Export Inventory</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a href="login.html">Login Page</a>
+                            <a href="#">Orders <span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Add Order</a>
+                                </li>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Search Orders</a>
+                                </li>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Export Orders</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                    <!-- /.nav-second-level -->
                 </li>
+                <li>
+                    <a href="#"><i class="fa fa-ticket fa-fw"></i> Tickets<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Add Order</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Process Orders</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Search Orders</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Export Orders</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bullhorn fa-fw"></i> Inventory<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Add Item</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Search Inventory</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Export Inventory</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-flag-o fa-fw"></i> Tifo<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Add Tifo Event</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Search Tifo Events</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Add Tifo Location</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">earch Tifo Location</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Log Tifo Hours</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-male fa-fw"></i> Contact<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Add Contact</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Search Contacts</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">View Contacts</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Export Contacts</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-user fa-fw"></i> Users Admin<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Add User</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Search Users</a>
+                        </li>
+                    </ul>
+                </li>
+
+
             </ul>
         </div>
         <!-- /.sidebar-collapse -->
