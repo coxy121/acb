@@ -9,13 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>ACB 121 CMS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
+    <!-- MetisMenu CSS -->
+    <link href="{{ asset('js/metisMenu/dist/metisMenu.min.css')}}" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link href="{{ asset('css/simple-sidebar.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/acb.css')}}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ asset('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,20 +33,21 @@
 </head>
 
 <body>
+<div id="wrapper">
 @yield('body')
+</div>
+<!-- /#wrapper -->
 <!-- jQuery -->
-<script src="{{ asset('js/jquery.js')}}"></script>
+<script src="{{ asset('js/jquery.min.js')}}"></script>
 
 <!-- Bootstrap Core JavaScript -->
 <script src="{{ asset('js/bootstrap.min.js')}}"></script>
 
-<!-- Menu Toggle Script -->
-<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="{{ asset('js/metisMenu/dist/metisMenu.min.js')}}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{{ asset('js/acb.js')}}"></script>
 
 </body>
 

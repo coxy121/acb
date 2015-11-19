@@ -1,4 +1,4 @@
-@extends('layouts.menu')
+@extends('layouts.navigation')
 @section('page_heading','Simple Sidebar')
 @section('section')
 
