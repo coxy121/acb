@@ -29,8 +29,10 @@ class MemberController extends Controller
      */
     public function create()
     {
-        //
-        return View('members/create');
+        $member = new Member;
+        $data = array();
+        $data['member'] = $member;
+        return View('members/create',$data);
     }
 
     /**
@@ -41,7 +43,33 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //set the member data
+        $member = new Member;
+        $member->first_name = $request->first_name;
+        $member->last_name = $request->last_name;
+        $member->address_1 = $request->address_1;
+        $member->address_2 = $request->address_2;
+        $member->city = $request->city;
+        $member->state = $request->state;
+        $member->zip = $request->zip;
+        $member->phone = $request->phone;
+        $member->email = $request->email;
+        $member->member_type = $request->member_type;
+
+        //create the member in the db
+        if(!$member->save()){
+            $errors = $member->getErrors();
+            return redirect()
+                ->action('MemberController@create')
+                ->with('errors',$errors)
+                ->withInput();
+        }
+
+        //success
+        return redirect()
+            ->action('MemberController@create')
+            ->with('message',
+                '<div class="alert alert-success">Member added successfully</div>');
     }
 
     /**
@@ -52,11 +80,8 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        //
-        //
         $data = array();
         $data['member'] = Member::find($id);
-        //print_R($member);
         return View('members/show',$data);
     }
 

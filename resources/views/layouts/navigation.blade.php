@@ -14,7 +14,7 @@
     </div>
     <!-- /.navbar-header -->
 
-    <ul class="nav navbar-top-links navbar-right">
+    <ul class="nav navbar-top-links navbar-right hidden-xs">
         <!-- /.dropdown -->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -38,6 +38,9 @@
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
+                <li class="hidden-sm hidden-md hidden-lg">
+                    <a href="{{ url ('') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
                 <li class="sidebar-search">
                     <div class="input-group custom-search-form">
                         <input type="text" class="form-control" placeholder="Search...">
@@ -55,8 +58,8 @@
                 <li>
                     <a href="#"><i class="fa fa-users fa-fw"></i> Members<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li {{ (Request::is('*addmember') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('addmember') }}">Add Member</a>
+                        <li {{ (Request::is('*members') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('members') }}">Add Member</a>
                         </li>
                         <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
                             <a href="{{ url ('panels') }}">Search Member</a>
@@ -223,8 +226,17 @@
                         </li>
                     </ul>
                 </li>
-
-
+                <li class="hidden-sm hidden-md hidden-lg">
+                    <a href="#"><i class="fa fa-gear fa-fw"></i> Your Settings<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">User Profile</a>
+                        </li>
+                        <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('panels') }}">Settings</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->
